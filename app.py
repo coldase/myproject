@@ -1,10 +1,10 @@
-from flask import Flask, render_template, send_from_directory
+from flask import Flask, render_template
 
-app = Flask(__name__, static_url_path="", static_folder="frontend/build")
+app = Flask(__name__)
 
 @app.route("/")
 def index():
-	return send_from_directory(app.static_folder, 'index.html')
+	return render_template('index.html')
 
 if __name__ == "__main__":
 	app.run(debug=True)
